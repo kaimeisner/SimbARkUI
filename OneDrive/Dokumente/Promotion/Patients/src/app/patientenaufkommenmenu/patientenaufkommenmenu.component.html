@@ -1,0 +1,23 @@
+<body>
+<h1>Zonenaufbau</h1>
+<div class="outer">
+  <div class="canvas">
+    <canvas id="field"></canvas>
+  </div>
+  <div class="input">
+    <h3>Zonendefinition</h3>
+    <form>
+      <mat-form-field class="numberOfAreas">
+        <mat-label>Anzahl an Soldaten</mat-label>
+        <input id="soldiers" matInput type="number" min="1" value=1>
+      </mat-form-field>
+      <button mat-button (click)="saveSoldiers()">Speichern</button>
+    </form>
+  </div>
+  <div class="input">
+    <h3>Patientenaufkommen</h3>
+    <button mat-button (click)="update()">Bearbeiten</button>
+    <button mat-button (click)="deleteAufkommen()">Löschen</button>
+  </div>
+</div>
+</body>

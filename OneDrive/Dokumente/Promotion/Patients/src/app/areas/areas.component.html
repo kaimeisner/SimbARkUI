@@ -1,0 +1,52 @@
+<body>
+<h1>Zonenaufbau</h1>
+<div class="outer">
+  <div class="canvas">
+    <canvas id="field"></canvas>
+  </div>
+  <div class="input">
+    <h3>Feldgröße</h3>
+    <form>
+      <mat-form-field class="numberOfAreas">
+        <mat-label>Feldbreite in km</mat-label>
+        <input id="width" matInput type="number" min="1">
+      </mat-form-field>
+      <mat-form-field class="numberOfAreas">
+        <mat-label>Feldhöhe in km</mat-label>
+        <input id="height" matInput type="number" min="1">
+      </mat-form-field>
+    </form>
+    <button mat-button (click)="saveSize()">Speichern</button>
+  </div>
+  <div class="input">
+    <h3>Aufspaltung</h3>
+    <form>
+      <mat-form-field>
+        <select id="select" matNativeControl required>
+          <option value="Horizontal">Horizontal</option>
+          <option value="Vertikal">Vertikal</option>
+        </select>
+      </mat-form-field>
+      <mat-form-field class="numberOfAreas">
+        <mat-label>Anzahl an Zonen</mat-label>
+        <input id="splits" matInput type="number" min="1" value=1>
+      </mat-form-field>
+    </form>
+    <button mat-button (click)="split()">Aufspalten</button>
+    <button mat-button (click)="unit()">Zusammenführen</button>
+  </div>
+  <div class="input">
+    <h3>Zonendefinition</h3>
+    <form>
+      <mat-form-field class="numberOfAreas">
+        <mat-label>Name</mat-label>
+        <input id="name" matInput>
+      </mat-form-field>
+    </form>
+    <button mat-button (click)="saveName()">Speichern</button>
+  </div>
+  <div class="info" id="background">
+    <p id="info">Das Feld ist gültig</p>
+  </div>
+</div>
+</body>

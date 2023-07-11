@@ -1,0 +1,27 @@
+<div>
+
+    <app-options-sidebar (callParent)="updateCharts()"></app-options-sidebar>
+
+    <canvas id="Chart">{{ chart }}</canvas>
+
+    <div class="slider-container">
+        <mat-slider class="slider-label" min="0" max="100" step="1" [(ngModel)]="sliderValue" (input)="onSliderChange($event)" aria-label="Slider"></mat-slider>
+        <input type="number" min="0" max="100" [(ngModel)]="sliderValue" (ngModelChange)="onInputChange($event)">
+        <div>
+            <input type="checkbox" id="myCheckbox" class="checkbox" [(ngModel)]="selectAllChecked" (change)="onSelectAllChange()">
+            <label for="myCheckbox" class="checkbox-label"> Select All </label>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="button-container">
+        <button class="template-btn" (click)="setTemplate(1)"> Template1 </button>
+        <button class="template-btn" (click)="setTemplate(2)"> Template2 </button>
+        <button class="template-btn" (click)="setTemplate(3)"> Template3 </button>
+        <button class="template-btn" (click)="setTemplate(4)"> Template4 </button>
+        <button class="template-btn" (click)="saveTemplate()"> Save Template </button>
+        <button class="template-btn" (click)="commit()"> Commit </button>
+    </div>
+
+</div>
